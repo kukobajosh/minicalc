@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind utilities;
+        
+        body {
+            @apply antialiased font-sans text-slate-800 bg-slate-50;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- Calculator Container -->
+    <div class="w-full max-w-[320px] bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+        
+        <!-- Display -->
+        <div class="p-6 pb-2 bg-slate-50">
+            <div class="flex flex-col items-end justify-end h-24 mb-2">
+                <div id="previous-operand" class="text-slate-400 text-sm font-medium h-6 mb-1 break-all"></div>
+                <div id="current-operand" class="text-4xl font-light text-slate-800 break-all leading-none">0</div>
+            </div>
+        </div>
+
+        <!-- Keypad -->
+        <div class="grid grid-cols-4 gap-3 p-5 bg-white">
+            
+            <!-- Row 1 -->
+            <button data-action="clear" class="col-span-2 py-4 rounded-2xl bg-slate-100 text-slate-600 font-medium text-lg hover:bg-slate-200 active:scale-95 transition-all duration-100">AC</button>
+            <button data-action="delete" class="py-4 rounded-2xl bg-slate-100 text-slate-600 font-medium text-lg hover:bg-slate-200 active:scale-95 transition-all duration-100">DEL</button>
+            <button data-operation="/" class="py-4 rounded-2xl bg-indigo-50 text-indigo-600 font-medium text-xl hover:bg-indigo-100 active:scale-95 transition-all duration-100">÷</button>
+
+            <!-- Row 2 -->
+            <button data-number="7" class="py-4 rounded-2xl text-slate-700 font-medium text-xl hover:bg-slate-50 active:scale-95 transition-all duration-100 border border-slate-100 shadow-sm">7</button>
+            <button data-number="8" class="py-4 rounded-2xl text-slate-700 font-medium text-xl hover:bg-slate-50 active:scale-95 transition-all duration-100 border border-slate-100 shadow-sm">8</button>
+            <button data-number="9" class="py-4 rounded-2xl text-slate-700 font-medium text-xl hover:bg-slate-50 active:scale-95 transition-all duration-100 border border-slate-100 shadow-sm">9</button>
+            <button data-operation="*" class="py-4 rounded-2xl bg-indigo-50 text-indigo-600 font-medium text-xl hover:bg-indigo-100 active:scale-95 transition-all duration-100">×</button>
+
+            <!-- Row 3 -->
+            <button data-number="4" class="py-4 rounded-2xl text-slate-700 font-medium text-xl hover:bg-slate-50 active:scale-95 transition-all duration-100 border border-slate-100 shadow-sm">4</button>
+            <button data-number="5" class="py-4 rounded-2xl text-slate-700 font-medium text-xl hover:bg-slate-50 active:scale-95 transition-all duration-100 border border-slate-100 shadow-sm">5</button>
+            <button data-number="6" class="py-4 rounded-2xl text-slate-700 font-medium text-xl hover:bg-slate-50 active:scale-95 transition-all duration-100 border border-slate-100 shadow-sm">6</button>
+            <button data-operation="-" class="py-4 rounded-2xl bg-indigo-50 text-indigo-600 font-medium text-xl hover:bg-indigo-100 active:scale-95 transition-all duration-100">−</button>
+
+            <!-- Row 4 -->
+            <button data-number="1" class="py-4 rounded-2xl text-slate-700 font-medium text-xl hover:bg-slate-50 active:scale-95 transition-all duration-100 border border-slate-100 shadow-sm">1</button>
+            <button data-number="2" class="py-4 rounded-2xl text-slate-700 font-medium text-xl hover:bg-slate-50 active:scale-95 transition-all duration-100 border border-slate-100 shadow-sm">2</button>
+            <button data-number="3" class="py-4 rounded-2xl text-slate-700 font-medium text-xl hover:bg-slate-50 active:scale-95 transition-all duration-100 border border-slate-100 shadow-sm">3</button>
+            <button data-operation="+" class="py-4 rounded-2xl bg-indigo-50 text-indigo-600 font-medium text-xl hover:bg-indigo-100 active:scale-95 transition-all duration-100">+</button>
+
+            <!-- Row 5 -->
+            <button data-number="0" class="col-span-2 py-4 rounded-2xl text-slate-700 font-medium text-xl hover:bg-slate-50 active:scale-95 transition-all duration-100 border border-slate-100 shadow-sm">0</button>
+            <button data-number="." class="py-4 rounded-2xl text-slate-700 font-medium text-xl hover:bg-slate-50 active:scale-95 transition-all duration-100 border border-slate-100 shadow-sm">.</button>
+            <button data-action="calculate" class="py-4 rounded-2xl bg-indigo-600 text-white font-medium text-xl hover:bg-indigo-700 active:scale-95 transition-all duration-100 shadow-md shadow-indigo-200">=</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
